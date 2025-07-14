@@ -1,8 +1,8 @@
 <div align="center">
     <img src="public/brand/logo_text.png" alt="Superkey logo" />
         </br></br>
-    <h4 color="green">FlowGPT is a tool to generate flowchart with ai (gpt-3.5)</h4>
-    <p>Made with ❤️ by <a target="_blank" href="https://twitter.com/nil_ooy">@nilooy 🧑‍💻</a></p>
+    <h4 color="green">VisGenAI is a tool to generate flowchart with ai (gpt-3.5)</h4>
+    
     
     
    
@@ -27,21 +27,21 @@
 
 1. Clone the Repo
 
-2. rename the `env.template` to `.env.local` and OPENAI_API_KEY
+2. rename the `env.template` to `.env.local` and add your OPENAI_API_KEY
 
 2. `cd` into the folder
 ```sh
-cd flowgpt
+cd VisGenAi-FlowChart-Generator
 ```
 
-3. Install all deps with yarn
+3. Install all dependencies using npm
 ```sh
-yarn
+npm install
 ```
 
-4. Run in development mode
+4. Run the development server
 ```sh
-yarn dev
+npm run dev
 ```
 
 5. Open browser and go to http://localhost:3000
@@ -50,14 +50,13 @@ yarn dev
 ## Contribution
 it's a pretty new tool, Lots of room for improvement, feel free to contribute.
 
-## Roadmap
+## Features
 
-- Automatic syntax error detection and retry with history
-- OpenAI API KEY modal to insert from the UI
-- Save flowcharts on localStorage
-- Animated Flowchart Generation (exportable as video)
+- Convert plain text into structured diagrams
+- Supports various templates like Flowchart, Sequence Diagram, Mind Map
+- Uses OpenAI's GPT models via LangChain
+- Built using Next.js and Tailwind CSS
 
 
 
-## Updates will be posted here
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/nil_ooy.svg?style=social&label=Follow%20%40nil_ooy)](https://twitter.com/nil_ooy)
+
