@@ -1,0 +1,96 @@
+🧑‍💻 FlowGPT Setup and Upgrade Full Guide 
+
+
+📊 1. Extract and Enter Project
+
+    unzip flowgpt-main.zip
+    cd flowgpt-main
+
+📊 2. Install Project Dependencies
+
+    npm install
+
+    This installs all the required Node.js packages.
+
+📊 4. Start Server (First Attempt)
+
+    npm run dev
+
+    If any error appears related to model or API Key, proceed to fix.
+
+
+📊 5. Fix Deprecated Model Name
+
+    Inside `/src/pages/api/ask.ts` and `/src/lib/generate.ts`:
+
+    Change:
+    typescript
+    modelName: "text-davinci-003"
+
+    To:
+    typescript
+    modelName: "gpt-3.5-turbo"
+
+📊 6. Upgrade LangChain to Latest
+
+    npm install langchain@latest
+
+    To ensure latest structure and compatibility.
+
+
+📊 7. Update Imports for Latest Langchain
+
+| Old Import | New Import |
+|:--|:--|
+| `import { ChatOpenAI } from "langchain/chat_models";` | `import { ChatOpenAI } from "@langchain/openai";` |
+| `import { PromptTemplate } from "langchain";` | `import { PromptTemplate } from "@langchain/core/prompts";` |
+
+Apply these changes inside `/src/pages/api/ask.ts` and `/src/lib/generate.ts`.
+
+
+
+📊 8. Final Corrected Imports (Example)
+typescript
+import { ChatOpenAI } from "@langchain/openai";
+import { BaseChain, LLMChain, loadQAMapReduceChain } from "langchain/chains";
+import { Document } from "langchain/document";
+import { TextLoader } from "langchain/document_loaders";
+import { MarkdownTextSplitter } from "langchain/text_splitter";
+import { PromptTemplate } from "@langchain/core/prompts";
+
+
+📊 9. How to Run Project (After Fixes)
+
+cd flowgpt-main
+npm install          (only needed once)
+npm run dev          (to start server)
+
+Open browser and go to:
+text
+http://localhost:3000
+
+
+
+
+
+
+
+ 📌 Summary of Important Commands
+| Command | Purpose |
+|:-|:--|
+| `npm install` | Install all Node.js dependencies |
+| `npm run dev` | Start development server |
+| `npm install langchain@latest` | Upgrade LangChain package |
+| `cp env.template .env.local` | Create environment file |
+
+
+==================================================================
+TO CHANGE LOGO OF PROJECT, GO TO public/brand/logo.png
+DELETE THIS IMAGE ADD NEW IMAGE NAME IT AS logo.png
+==================================================================
+
+
+
+
+
+
